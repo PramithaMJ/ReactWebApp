@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import "./App.css";
 import Main from "./Componets/Main";
 
@@ -8,11 +9,11 @@ import { myData } from "./Data/myData";
 //functional comonents can't start with simple letter. It must start with Capital letters.
 const NewBlock = () => {
   return (
-    <>
-      {myData.map(({ name, city, position }, id) => {
+    <Fragment>
+      {myData?.map(({ name, city, position }, id) => {
         return <Main key={id} name={name} city={city} position={position} />;
       })}
-    </>
+    </Fragment>
   );
 };
 
@@ -48,4 +49,4 @@ function App() {
 
 export default App;
 
-//STOP 1:42
+//STOP 2:31
