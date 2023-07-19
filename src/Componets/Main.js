@@ -34,7 +34,7 @@
 // console.log(side);
 // console.log(boss);
 
-function Main({children, name, city,position}){
+function Main({ name, city,position}){
 
     //console.log(props);
     //1:31 Object Destructuring
