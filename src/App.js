@@ -1,33 +1,12 @@
 import "./App.css";
 import Main from "./Componets/Main";
 
-const myData = [
-  {
-    id: 1234,
-    name: "Kasun",
-    city: "Neliya",
-    position: "Web Developer",
-  },
-  {
-    id: 1235,
-    name: "Akila",
-    city: "Galle",
-    position: "Developer",
-  },
-  {
-    id: 1236,
-    name: "pramitha",
-    city: "N-Elia",
-    position: "Engineer",
-  },
-  {
-    id: 1237,
-    name: "Jaysooriya",
-    city: "Kandy",
-    position: "System Engineer",
-  },
-];
+//when export before function or object
+import { myData } from "./Data/myData";
 
+const mainBlock = myData.map(({ name, city, position }, id) => {
+  return <Main key={id} name={name} city={city} position={position} />;
+})
 function App() {
   return (
     //JSX fagment
@@ -48,10 +27,7 @@ function App() {
       {/* {myData.map(({name ,city , position}, index)=> {
         return <p><Main key={index} name={name} city={city} position={position} /></p>                
       })}  */}
-
-      {myData.map(({ name, city, position }, id) => {
-        return <Main key={id} name={name} city={city} position={position} />;
-      })}
+      {mainBlock}
     </>
   );
 }
