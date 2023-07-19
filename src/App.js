@@ -4,10 +4,23 @@ import Main from "./Componets/Main";
 //when export before function or object
 import { myData } from "./Data/myData";
 
-const mainBlock = myData.map(({ name, city, position }, id) => {
-  return <Main key={id} name={name} city={city} position={position} />;
-})
+//functional comonents
+//functional comonents can't start with simple letter. It must start with Capital letters.
+const NewBlock = () => {
+  return (
+    <>
+      {myData.map(({ name, city, position }, id) => {
+        return <Main key={id} name={name} city={city} position={position} />;
+      })}
+    </>
+  );
+};
+
 function App() {
+  // const mainBlock = myData.map(({ name, city, position }, id) => {
+  //   return <Main key={id} name={name} city={city} position={position} />;
+  // });
+
   return (
     //JSX fagment
     <>
@@ -27,7 +40,8 @@ function App() {
       {/* {myData.map(({name ,city , position}, index)=> {
         return <p><Main key={index} name={name} city={city} position={position} /></p>                
       })}  */}
-      {mainBlock}
+      {/* {mainBlock} */}
+      <NewBlock />
     </>
   );
 }
