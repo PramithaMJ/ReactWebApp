@@ -1,12 +1,14 @@
 // const name ="Pramitha Jayasooriya";
 // const position = "Web Developer";
 
+import { Fragment } from "react";
+
 // const myObj ={
 //     name:`${name}`,
 //     position:`${position}`,
 //     city:"Galle"
 // };
- 
+
 //Arry Destructuring
 // const book =['The last battle', 'C.S. Lewise',"156"];
 
@@ -34,28 +36,42 @@
 // console.log(side);
 // console.log(boss);
 
-function Main({name, city,position}){
+function Main({ name, city, position }) {
+  //console.log(props);
+  //1:31 Object Destructuring
 
-    //console.log(props);
-    //1:31 Object Destructuring
-    
-    return (
-        <div>
-            This is main components.
-        <ul>
-            <li>{name}</li>
-            <li>{position}</li>
-            <li>{name}</li>
-            <li>{position}</li>
-            <li>{city}</li>
-            <li>java</li>
-            <li>node</li>
-            <li>react</li>
-            <li>javascript</li>
-        </ul> 
-            {/* {props.children} */}
-        </div>
-    );
+  return (
+    <div>
+      <img
+        src="https://images.pexels.com/photos/207891/pexels-photo-207891.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+        alt="teddy photo"
+      />
+      <div>
+            
+        <h3>{name}</h3>
+        <p>
+          <span>{city}</span>
+          <span>{position}</span>
+        </p>
+      </div>
+    </div>
+
+    // <div>
+    //     This is main components.
+    // <ul>
+    //     <li>{name}</li>
+    //     <li>{position}</li>
+    //     <li>{name}</li>
+    //     <li>{position}</li>
+    //     <li>{city}</li>
+    //     <li>java</li>
+    //     <li>node</li>
+    //     <li>react</li>
+    //     <li>javascript</li>
+    // </ul>
+    //     {/* {props.children} */}
+    // </div>
+  );
 }
 
 export default Main;

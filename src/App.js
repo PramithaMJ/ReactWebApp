@@ -7,24 +7,24 @@ import { myData } from "./Data/myData";
 
 //functional comonents
 //functional comonents can't start with simple letter. It must start with Capital letters.
-const NewBlock = () => {
-  return (
-    <Fragment>
-      {myData?.map(({ name, city, position }, id) => {
-        return <Main key={id} name={name} city={city} position={position} />;
-      })}
-    </Fragment>
-  );
-};
+// const NewBlock = () => {
+//   return (
+//     <Fragment>
+//       {myData?.map(({ name, city, position }, id) => {
+//         return <Main key={id} name={name} city={city} position={position} />;
+//       })}
+//     </Fragment>
+//   );
+// };
 
 function App() {
-  // const mainBlock = myData.map(({ name, city, position }, id) => {
-  //   return <Main key={id} name={name} city={city} position={position} />;
-  // });
+  const mainBlock = myData.map(({ name, city, position }, id) => {
+    return <Main key={id} name={name} city={city} position={position} />;
+  });
 
   return (
-    //JSX fagment
-    <>
+    //can use JSX fagment
+    <div>
       <h1>PMJ</h1>
       <div>Pramitha Jayasooriy a</div>
       {/* <Main name="Kasun" city="NEliya" position="Softwear developer" />
@@ -42,8 +42,12 @@ function App() {
         return <p><Main key={index} name={name} city={city} position={position} /></p>                
       })}  */}
       {/* {mainBlock} */}
-      <NewBlock />
-    </>
+      {/* <NewBlock /> */}
+      <div className="mainBlock_container">
+      {mainBlock}
+      </div>
+
+    </div>
   );
 }
 
