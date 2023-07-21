@@ -36,19 +36,22 @@ import { Fragment } from "react";
 // console.log(side);
 // console.log(boss);
 
-function Main({ name, city,image, position }) {
+function Main({ name, city, image, position }) {
   //console.log(props);
   //1:31 Object Destructuring
 
   return (
     <div>
       <img
-        src={image?`${image}`:`https://images.pexels.com/photos/207891/pexels-photo-207891.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500`}
+        src={
+          image
+            ? `${image}`
+            : `https://images.pexels.com/photos/207891/pexels-photo-207891.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500`
+        }
         alt="teddy photo"
       />
       <div className="main_details">
-
-        <h3>{name}</h3>
+        <h3>{!name?`no-name`:`${name}`}</h3>
         <p>
           <span>{city}</span>
           <span>{position}</span>
