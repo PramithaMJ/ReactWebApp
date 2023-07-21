@@ -55,18 +55,20 @@ function App() {
     //console.log(myVar);
   };
 
-  console.log(myDataState);
-  const mainBlock = myDataState.map(({ name, city, image, position }, id) => {
-    return (
-      <Main
-        key={id}
-        name={name}
-        city={city}
-        image={image}
-        position={position}
-      />
-    );
-  });
+  //console.log(myDataState);
+  const mainBlock = myDataState.map(
+    ({ name, city, image, position, id }, index) => {
+      return (
+        <Main
+          key={id + index}
+          name={name}
+          city={city}
+          image={image}
+          position={position}
+        />
+      );
+    }
+  );
 
   // const mainBlock = myData.map(({ name, city, image, position }, id) => {
   //   return (
@@ -117,10 +119,14 @@ function App() {
       >
         Click Me
       </button>
+      <br />
+      <br />
+
+      <input type="text" />
     </div>
   );
 }
 
 export default App;
 
-//STOP 2:31
+//STOP 3:49:38
