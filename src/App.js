@@ -30,7 +30,7 @@ function App() {
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRd36Z9hply0yjJg0xjkrcKw0WJ78YcXdw4Ps1UQqvPydcrBbvVmqt9EgRWTV-c5pNWUt4&usqp=CAU",
   });
 
-  const [myDataState,setMyDataState] = useState(myData)
+  const [myDataState, setMyDataState] = useState(myData);
 
   const clickHaddle = () => {
     // myVar = "PRAMITHA";
@@ -39,13 +39,14 @@ function App() {
       ...myVar,
       name: "PRAMITHAMJ", //spread oprator
       city: "Kothmale",
+
+      setMyDataState([...myDataState])
     });
     //console.log(myVar);
   };
 
-console.log(myDataState);
-
-  const mainBlock = myData.map(({ name, city, image, position }, id) => {
+  console.log(myDataState);
+  const mainBlock = myDataState.map(({ name, city, image, position }, id) => {
     return (
       <Main
         key={id}
@@ -56,6 +57,18 @@ console.log(myDataState);
       />
     );
   });
+
+  // const mainBlock = myData.map(({ name, city, image, position }, id) => {
+  //   return (
+  //     <Main
+  //       key={id}
+  //       name={name}
+  //       city={city}
+  //       image={image}
+  //       position={position}
+  //     />
+  //   );
+  // });
 
   return (
     //can use JSX fagment
