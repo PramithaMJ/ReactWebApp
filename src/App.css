@@ -17,3 +17,9 @@
   width: 100%;
   object-fit: contain;
 }
+
+.main_container .main_details p {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
