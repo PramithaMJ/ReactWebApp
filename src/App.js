@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import "./App.css";
 import Main from "./Componets/Main";
 
@@ -18,14 +18,31 @@ import { myData } from "./Data/myData";
 // };
 
 function App() {
+  // react hook   eg.  const [variableName,setVariableNameInFirstLetterCapital] = userState('default value')
+  const [myVar, setMyvar] = useState("PMJ");
+
+  const clickHaddle = () => {
+    // myVar = "PRAMITHA";
+    setMyvar("PRAMITHA");
+    console.log(myVar);
+  };
+
   const mainBlock = myData.map(({ name, city, image, position }, id) => {
-    return <Main key={id} name={name} city={city} image={image} position={position} />;
+    return (
+      <Main
+        key={id}
+        name={name}
+        city={city}
+        image={image}
+        position={position}
+      />
+    );
   });
 
   return (
     //can use JSX fagment
     <div className="main_container">
-      <h1>PMJ</h1>
+      <h1>{myVar}</h1>
       <div>Pramitha Jayasooriya</div>
       {/* <Main name="Kasun" city="NEliya" position="Softwear developer" />
       <Main name="Amal" city="Kurunagala" position="App developer">
@@ -43,10 +60,21 @@ function App() {
       })}  */}
       {/* {mainBlock} */}
       {/* <NewBlock /> */}
-      <div className="mainBlock_container">
-      {mainBlock}
-      </div>
-
+      <div className="mainBlock_container">{mainBlock}</div>
+      <br />
+      <br />
+      <button
+        style={{
+          //inline css
+          //javaScript Object
+          fontSize: "12px",
+          border: "1px solid red",
+          padding: "7px 12px",
+        }}
+        onClick={clickHaddle}
+      >
+        Click Me
+      </button>
     </div>
   );
 }
