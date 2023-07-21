@@ -18,8 +18,8 @@ import { myData } from "./Data/myData";
 // };
 
 function App() {
-  const mainBlock = myData.map(({ name, city, position }, id) => {
-    return <Main key={id} name={name} city={city} position={position} />;
+  const mainBlock = myData.map(({ name, city, image, position }, id) => {
+    return <Main key={id} name={name} city={city} image={image} position={position} />;
   });
 
   return (
