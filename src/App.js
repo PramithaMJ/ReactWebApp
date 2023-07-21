@@ -19,13 +19,31 @@ import { myData } from "./Data/myData";
 
 function App() {
   // react hook   eg.  const [variableName,setVariableNameInFirstLetterCapital] = userState('default value')
-  const [myVar, setMyvar] = useState("PMJ");
+  //const [myVar, setMyvar] = useState("PMJ");
+  //object
+  const [myVar, setMyvar] = useState({
+    id: 1235,
+    name: "Akila",
+    city: "Galle",
+    position: "Developer",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRd36Z9hply0yjJg0xjkrcKw0WJ78YcXdw4Ps1UQqvPydcrBbvVmqt9EgRWTV-c5pNWUt4&usqp=CAU",
+  });
+
+  const [myDataState,setMyDataState] = useState(myData)
 
   const clickHaddle = () => {
     // myVar = "PRAMITHA";
-    setMyvar("PRAMITHA");
-    console.log(myVar);
+    //setMyvar("PRAMITHA");
+    setMyvar({
+      ...myVar,
+      name: "PRAMITHAMJ", //spread oprator
+      city: "Kothmale",
+    });
+    //console.log(myVar);
   };
+
+console.log(myDataState);
 
   const mainBlock = myData.map(({ name, city, image, position }, id) => {
     return (
@@ -42,7 +60,8 @@ function App() {
   return (
     //can use JSX fagment
     <div className="main_container">
-      <h1>{myVar}</h1>
+      <h1>{myVar.name}</h1>
+      <h2>{myVar.city}</h2>
       <div>Pramitha Jayasooriya</div>
       {/* <Main name="Kasun" city="NEliya" position="Softwear developer" />
       <Main name="Amal" city="Kurunagala" position="App developer">
