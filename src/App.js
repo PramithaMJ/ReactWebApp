@@ -43,6 +43,7 @@ function App() {
     setMyDataState([
       ...myDataState,
       {
+        //add another element to array as object
         id: 12348,
         name: "Mihiranga",
         city: "Hapugala",
