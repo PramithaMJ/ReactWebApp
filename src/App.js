@@ -39,9 +39,18 @@ function App() {
       ...myVar,
       name: "PRAMITHAMJ", //spread oprator
       city: "Kothmale",
-
-      setMyDataState([...myDataState])
     });
+    setMyDataState([
+      ...myDataState,
+      {
+        id: 12348,
+        name: "Mihiranga",
+        city: "Hapugala",
+        position: "Ruhuna",
+        image:
+          "https://png.pngitem.com/pimgs/s/49-497525_annoyed-peter-peter-family-guy-transparent-hd-png.png",
+      },
+    ]);
     //console.log(myVar);
   };
 
