@@ -24,9 +24,9 @@ function App() {
 
   return (
     //can use JSX fagment
-    <div>
+    <div className="main_container">
       <h1>PMJ</h1>
-      <div>Pramitha Jayasooriy a</div>
+      <div>Pramitha Jayasooriya</div>
       {/* <Main name="Kasun" city="NEliya" position="Softwear developer" />
       <Main name="Amal" city="Kurunagala" position="App developer">
         <h5>This is under Main components</h5>
