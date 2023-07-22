@@ -31,6 +31,8 @@ function App() {
   });
 
   const [myDataState, setMyDataState] = useState(myData);
+  const [inputVal, setInputVal] = useState("");
+  const [inputVal2, setInputVal2] = useState("");
 
   const clickHaddle = () => {
     // myVar = "PRAMITHA";
@@ -56,6 +58,9 @@ function App() {
   };
 
   //console.log(myDataState);
+  console.log(inputVal);
+  console.log(inputVal2);
+
   const mainBlock = myDataState.map(
     ({ name, city, image, position, id }, index) => {
       return (
@@ -82,10 +87,19 @@ function App() {
   //   );
   // });
 
+  const inputChange = (event, data) => {
+    event.preventDefault(); //default function
+    console.log(data);
+    setInputVal2(event.target.value);
+  };
+
   return (
     //can use JSX fagment
     <div className="main_container">
-      <h1>{myVar.name}</h1>
+      {/* <h1>{myVar.name}</h1> */}
+      <h1>{inputVal}</h1>
+      <br/>
+      <h1>{inputVal2}</h1>
       <h2>{myVar.city}</h2>
       <div>Pramitha Jayasooriya</div>
       {/* <Main name="Kasun" city="NEliya" position="Softwear developer" />
@@ -122,7 +136,36 @@ function App() {
       <br />
       <br />
 
-      <input type="text" />
+      <input
+        style={{
+          border: "1px solid red",
+          fontSize: "14px",
+          padding: "7px",
+        }}
+        type="text"
+        placeholder="type what you want"
+        //anonymous function
+        onChange={(e) => {
+          e.preventDefault();
+          setInputVal(e.target.value); //get value of user input box
+        }}
+      />
+      <br />
+      <br />
+      <input
+        style={{
+          border: "1px solid red",
+          fontSize: "14px",
+          padding: "7px",
+        }}
+        type="text"
+        placeholder="method 2 input "
+        //anonymous function
+        onChange={(e) => {
+          e.preventDefault();
+          inputChange(e, inputVal2); //no problem when it give as function bracket because it call in under annonimous function
+        }}
+      />
     </div>
   );
 }
