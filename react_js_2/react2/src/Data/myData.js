@@ -1,4 +1,4 @@
-export const myDate = [
+export const myData = [
   {
     id: 1110,
     name: "John",

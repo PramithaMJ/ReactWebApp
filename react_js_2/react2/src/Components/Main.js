@@ -1,8 +1,6 @@
 function Main({ name, age, city, image }) {
   return (
     <div>
-      <h2>This come from main Components.</h2>
-
       <img
         src={
           image
@@ -14,8 +12,8 @@ function Main({ name, age, city, image }) {
       <div className="main_details">
         <h3>{!name ? `no-name` : `${name}`}</h3>
         <p>
-          <span>{city}</span>
-          <span>{age}</span>
+          <span>{city}    </span>
+          <span>age:{age}</span>
         </p>
       </div>
     </div>
