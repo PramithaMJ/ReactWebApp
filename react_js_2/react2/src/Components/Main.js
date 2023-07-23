@@ -6,7 +6,7 @@ function Main({ name, age, city, image }) {
       <img
         src={
           image
-            ? `$image`
+            ? `${image}`
             : `https://images.pexels.com/photos/207891/pexels-photo-207891.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500`
         }
         alt="teddy photo"
