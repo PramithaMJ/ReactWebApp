@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./App.css";
 
 const App = () => {
   const [imageUrl, setImageUrl] = useState("");
@@ -43,21 +44,23 @@ const App = () => {
         />
         <button
           onClick={() => {
-            {
-              console.log({
-                imageUrl,
-                name,
-                city,
-                position,
-              });
-              setImageUrl((pre) => {
-                if (pre.length > 0) {
-                  return "";
-                } else {
-                  return pre;
-                }
-              });
-            }
+            console.log({
+              imageUrl,
+              name,
+              city,
+              position,
+            });
+            setImageUrl((pre) => {
+              if (pre.length > 0) {
+                return "";
+              } else {
+                return pre;
+              }
+            });
+            //using ternory operator
+            setName((pre) => (pre.length > 0 ? "" : pre));
+            setCity((pre) => (pre.length > 0 ? "" : pre));
+            setPosition((pre) => (pre.length > 0 ? "" : pre));
           }}
         >
           Submit
