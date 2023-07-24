@@ -41,7 +41,18 @@ const App = () => {
             setPosition(e.target.value);
           }}
         />
-        <button>Submit</button>
+        <button
+          onClick={() => {
+            console.log({
+              imageUrl,
+              name,
+              city,
+              position,
+            });
+          }}
+        >
+          Submit
+        </button>
       </div>
       <div className="main_right"></div>
     </div>
