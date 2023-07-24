@@ -7,6 +7,10 @@ const App = () => {
   const [city, setCity] = useState("");
   const [position, setPosition] = useState("");
 
+  const [myData, setMyData] = useState([]);
+
+  console.log(myData);
+
   return (
     <div className="main_container">
       <div className="main_left">
@@ -44,11 +48,16 @@ const App = () => {
         />
         <button
           onClick={() => {
-            console.log({
-              imageUrl,
-              name,
-              city,
-              position,
+            setMyData((pre) => {
+              return [
+                ...pre,
+                {
+                  image: imageUrl,
+                  name,
+                  city,
+                  position,
+                },
+              ];
             });
             setImageUrl((pre) => {
               if (pre.length > 0) {
