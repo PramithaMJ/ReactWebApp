@@ -14,7 +14,7 @@ const App = () => {
           value={imageUrl}
           onChange={(e) => {
             e.preventDefault();
-            setImageUrl(e.target.value)
+            setImageUrl(e.target.value);
           }}
         />
         <input
@@ -22,6 +22,7 @@ const App = () => {
           value={name}
           onChange={(e) => {
             e.preventDefault();
+            setName(e.target.value);
           }}
         />
         <input
@@ -29,6 +30,7 @@ const App = () => {
           value={city}
           onChange={(e) => {
             e.preventDefault();
+            setCity(e.target.value);
           }}
         />
         <input
@@ -36,6 +38,7 @@ const App = () => {
           value={position}
           onChange={(e) => {
             e.preventDefault();
+            setPosition(e.target.value);
           }}
         />
         <button>Submit</button>
