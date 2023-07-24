@@ -3,55 +3,41 @@ import { myData } from "../Data/myData";
 import "../Style/App.css";
 import Main from "./Main";
 
-// const NewBlock = () => {
-//   return (
-//     <Fragment>
-//       {myDate?.map(({ name, city, age, image }, id) => {
-//         return (
-//           <Main key={id} name={name} city={city} age={age} image={image} />
-//         );
-//       })}
-//     </Fragment>
-//   );
-// };
-
 function App() {
-  // const mainBlock = myData.map(({ name, city, age, image, id }, index) => {
-  //   return (
-  //     <Main key={id + index} name={name} age={age} city={city} image={image} />
-  //   );
-  // });
+  const [inputVal, setInputVal] = useState(0);
 
-  const [myDataState, setMyDataState] = useState(myData);
-  const [myVar, setMyVar] = useState("Dini");
-
-  const clickHaddler = () => {
-    setMyVar("Dhanushika");
-    console.log(myVar);
-
-    setMyDataState([
-      ...myDataState,
-      {
-        id: 12348,
-        name: "Mihiranga",
-        city: "Hapugala",
-        age: 25,
-        image:
-          "https://png.pngitem.com/pimgs/s/49-497525_annoyed-peter-peter-family-guy-transparent-hd-png.png",
-      },
-    ]);
+  const clickHaddle = () => {
+    setInputVal(inputVal + 1);
   };
-  const mainBlock = myDataState.map(({ name, city, image, age, id }, index) => {
+
+  console.log(inputVal);
+  const mainBlock = myData.map(({ name, city, image, position, id }, index) => {
     return (
-      <Main key={id + index} name={name} city={city} image={image} age={age} />
+      <Main
+        key={id + index}
+        name={name}
+        city={city}
+        image={image}
+        position={position}
+      />
     );
   });
 
-  console.log(myData);
+  const inputChangeHandler = (event, data) => {
+    event.preventDefault(); //default function
+    console.log(data);
+    setInputVal(event.target.value);
+  };
+
   return (
-    <div>
-      <h1>Pramitha Jayasooriya</h1>
-      <h2>{myVar}</h2>
+    <div className="main_container">
+      <div>
+        PMJ
+        <h1>{inputVal}</h1>
+      </div>
+
+      <p>Pramitha Jayasooriya</p>
+
       <div className="mainBlock_container">{mainBlock}</div>
       <br />
       <br />
@@ -61,7 +47,7 @@ function App() {
           border: "1px solid red",
           padding: "7px 12px",
         }}
-        onClick={clickHaddler}
+        onClick={clickHaddle}
       >
         Click Me
       </button>

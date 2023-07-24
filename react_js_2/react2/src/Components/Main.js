@@ -1,4 +1,4 @@
-function Main({ name, age, city, image }) {
+function Main({ name, city, image, position }) {
   return (
     <div>
       <img
@@ -12,8 +12,8 @@ function Main({ name, age, city, image }) {
       <div className="main_details">
         <h3>{!name ? `no-name` : `${name}`}</h3>
         <p>
-          <span>{city}    </span>
-          <span>age:{age}</span>
+          <span>{city}</span>
+          <span>{position}</span>
         </p>
       </div>
     </div>
