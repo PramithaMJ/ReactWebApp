@@ -9,10 +9,35 @@ const App = () => {
   return (
     <div className="main_container">
       <div className="main_left">
-        <input type="text" value={imageUrl}/>
-        <input type="text" value={name}/>
-        <input type="text" value={city}/>
-        <input type="text" value={position}/>
+        <input
+          type="text"
+          value={imageUrl}
+          onChange={(e) => {
+            e.preventDefault();
+            setImageUrl(e.target.value)
+          }}
+        />
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => {
+            e.preventDefault();
+          }}
+        />
+        <input
+          type="text"
+          value={city}
+          onChange={(e) => {
+            e.preventDefault();
+          }}
+        />
+        <input
+          type="text"
+          value={position}
+          onChange={(e) => {
+            e.preventDefault();
+          }}
+        />
         <button>Submit</button>
       </div>
       <div className="main_right"></div>
