@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import Unit from "./comonents/Unit";
 
 const App = () => {
   const [imageUrl, setImageUrl] = useState("");
@@ -48,17 +49,15 @@ const App = () => {
         />
         <button
           onClick={() => {
-            setMyData((pre) => {
-              return [
-                ...pre,
-                {
-                  image: imageUrl,
-                  name,
-                  city,
-                  position,
-                },
-              ];
-            });
+            setMyData((pre) => [
+              ...pre,
+              {
+                image: imageUrl,
+                name,
+                city,
+                position,
+              },
+            ]);
             setImageUrl((pre) => {
               if (pre.length > 0) {
                 return "";
@@ -75,7 +74,17 @@ const App = () => {
           Submit
         </button>
       </div>
-      <div className="main_right"></div>
+      <div className="main_right">
+        {myData?.map(({ image, name, city, position }, index) => (
+          <Unit
+            image={image}
+            name={name}
+            city={city}
+            posistion={position}
+            key={index}
+          />
+        ))}
+      </div>
     </div>
   );
 };
