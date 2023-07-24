@@ -43,12 +43,21 @@ const App = () => {
         />
         <button
           onClick={() => {
-            console.log({
-              imageUrl,
-              name,
-              city,
-              position,
-            });
+            {
+              console.log({
+                imageUrl,
+                name,
+                city,
+                position,
+              });
+              setImageUrl((pre) => {
+                if (pre.length > 0) {
+                  return "";
+                } else {
+                  return pre;
+                }
+              });
+            }
           }}
         >
           Submit
