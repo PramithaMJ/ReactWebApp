@@ -9,7 +9,16 @@ function App() {
     setTimeout(() => {
       console.log("I am cliked");
       //setInputVal(inputVal + 1); //this is wrong method
-      setInputVal((pre) => pre + 1);
+      // setInputVal((pre) => pre + 1); //correct way
+      setInputVal((pre) => {
+        if (pre < 1) {
+          return pre + 1;
+        } else if (pre < 2) {
+          return pre + 3;
+        } else {
+          return pre + 2;
+        }
+      });
     }, 1000);
   };
 
