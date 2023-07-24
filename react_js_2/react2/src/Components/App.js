@@ -5,9 +5,11 @@ import Main from "./Main";
 
 function App() {
   const [inputVal, setInputVal] = useState(0);
-
   const clickHaddle = () => {
-    setInputVal(inputVal + 1);
+    setTimeout(() => {
+      console.log("I am cliked");
+      setInputVal(inputVal + 1);
+    }, 1000);
   };
 
   console.log(inputVal);
