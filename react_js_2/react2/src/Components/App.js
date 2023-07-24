@@ -8,11 +8,12 @@ function App() {
   const clickHaddle = () => {
     setTimeout(() => {
       console.log("I am cliked");
-      setInputVal(inputVal + 1);
+      //setInputVal(inputVal + 1); //this is wrong method
+      setInputVal((pre) => pre + 1);
     }, 1000);
   };
 
-  console.log(inputVal);
+  //console.log(inputVal);
   const mainBlock = myData.map(({ name, city, image, position, id }, index) => {
     return (
       <Main
