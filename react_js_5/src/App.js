@@ -71,57 +71,66 @@ const App = () => {
           }}
         />
         <button
-          onClick={() => {
-            setMyData((pre) => [
-              ...pre,
-              {
-                image: inputData.imageUrl,
-                name: inputData.name,
-                city: inputData.city,
-                position: inputData.position,
-              },
-            ]);
+  onClick={() => {
+    setMyData((prev) => [
+      ...prev,
+      {
+        image: inputData.imageUrl,
+        name: inputData.name,
+        city: inputData.city,
+        position: inputData.position,
+      },
+    ]);
 
-            setInputData((pre) => {
-              if (pre.imageUrl.length > 0) {
-                return {
-                  ...pre,
-                  imageUrl: "",
-                };
-              } else {
-                return pre;
-              }
-            });
-            //using ternory operator
-            setInputData((preName) =>
-              (preName.name.length > 0)
-                ?( {
-                    ...preName,
-                    name: "",
-                  })
-                : preName
-            );
+    setInputData((prev) => {
+      if (prev.imageUrl.length > 0) {
+        return {
+          ...prev,
+          imageUrl: "",
+        };
+      } else {
+        return prev;
+      }
+    });
 
-            setInputData((preCity) =>
-              preCity.city.length > 0
-                ? {
-                    ...preCity,
-                    city: "",
-                  }
-                : preCity
-            );
-            setInputData((prePosition) =>
-              prePosition.posistion.length > 0
-                ? {
-                    ...prePosition,
-                    prePosition: "",
-                  }
-                : prePosition
-            );
-          }}
-        >
-          Submit
-        </button>
+    setInputData((prev) => {
+      if (prev.name.length > 0) {
+        return {
+          ...prev,
+          name: "",
+        };
+      } else {
+        return prev;
+      }
+    });
+
+    setInputData((prev) => {
+      if (prev.city.length > 0) {
+        return {
+          ...prev,
+          city: "",
+        };
+      } else {
+        return prev;
+      }
+    });
+
+    setInputData((prev) => {
+      if (prev.position.length > 0) {
+        return {
+          ...prev,
+          position: "",
+        };
+      } else {
+        return prev;
+      }
+    });
+  }}
+>
+  Submit
+</button>
+
+        
       </div>
       <div className="main_right">
         {myData?.map(({ image, name, city, position }, index) => (
