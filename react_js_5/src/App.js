@@ -18,11 +18,27 @@ const App = () => {
 
   const [myData, setMyData] = useState([]);
 
-  //when functon rerenderig everytime useeffect will active.
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  const changeWindowWidth = () => {
+    setWindowWidth(window.innerWidth);
+  };
+
   useEffect(() => {
+    window.addEventListener("resize", changeWindowWidth);
     console.log("use effect calling...");
-  }, []); //when using [] then useeffect not rerendring
-  
+
+    return () => {
+      console.log("use effect cleanup fnction running...");
+      window.removeEventListener("resize", changeWindowWidth);
+    };
+  }, [inputData.city]);
+
+  // //when functon rerenderig everytime useeffect will active.
+  // useEffect(() => {
+  //   console.log("use effect calling...");
+  // }, [inputData.name]); //when using [] then useeffect not rerendring.
+  // //when changing the inputData name use Effect is rendering.
 
   //console.log(myData);
 
@@ -31,6 +47,7 @@ const App = () => {
       <Header />
 
       <div className="main_container">
+        <h1>{windowWidth}</h1>
         <div className="main_left">
           <input
             type="text"
