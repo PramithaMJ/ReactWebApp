@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import "./App.css";
 import Unit from "./components/Unit";
 import Header from "./components/Header";
@@ -18,7 +18,13 @@ const App = () => {
 
   const [myData, setMyData] = useState([]);
 
-  console.log(myData);
+  //when functon rerenderig everytime useeffect will active.
+  useEffect(() => {
+    console.log("use effect calling...");
+  }, []); //when using [] then useeffect not rerendring
+  
+
+  //console.log(myData);
 
   return (
     <div>
