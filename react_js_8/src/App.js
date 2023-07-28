@@ -4,6 +4,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./components/Home";
 import About from "./components/About";
 import Contact from "./components/Contact";
+import ContactDetail from "./components/ContactDetail";
+import User from "./components/User";
 
 const router = createBrowserRouter([
   {
@@ -20,7 +22,7 @@ const router = createBrowserRouter([
   },
   {
     path: "contact/detail",
-    element: <ContactDetails />,
+    element: <ContactDetail />,
   },
   {
     path: "contact/:id",
