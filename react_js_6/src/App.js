@@ -11,21 +11,26 @@ const App = () => {
   useEffect(() => {
     console.log("use Effect running");
 
-    if (apiId.length > 0) {
+    const apiCall = async () => {
+      console.log("api call running");
+      const res = await fetch(
+        `https://jsonplaceholder.typicode.com/posts/${apiId}`
+      );
+      const data = await res.json();
+
+      if (data) {
+        setData(data);
+      }
+    };
+
+    if (apiId.length > 0 && Number(apiId > 0) && Number(apiId) <= 100) {
       console.log("useEffect if condition");
-
-      const apiCall = async () => {
-        const res = await fetch(
-          `https://jsonplaceholder.typicode.com/posts/${apiId}`
-        );
-        const data = await res.json();
-
-        if (data) {
-          setData(data);
-        }
-      };
       apiCall();
     }
+    return () => {
+      console.log("cleanup");
+      apiCall();
+    };
   }, [apiId]);
 
   return (
