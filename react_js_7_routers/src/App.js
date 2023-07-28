@@ -6,6 +6,7 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import ContactDetails from "./components/ContactDetail";
+import User from "./components/User";
 
 const App = () => {
   return (
@@ -13,8 +14,9 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/About" element={<About />} />
-        <Route path="/Contact" element={<Contact />} />
-        <Route path="/Contact/details" element={<ContactDetails />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/contact/details" element={<ContactDetails />} />
+        <Route path="/Contact/:id" element={<User />}/>
       </Routes>
     </BrowserRouter>
   );
