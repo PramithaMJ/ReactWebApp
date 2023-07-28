@@ -1,0 +1,119 @@
+.header_container {
+  width: 100%;
+  padding: 20px  ;
+  margin-bottom: 100px;
+  background-color: rgb(235, 190, 190);
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header_container nav {
+  position: relative;
+}
+
+.header_container nav ul {
+  position: absolute;
+  list-style-type: none;
+  top: -22px;
+  right: -20px;
+  padding: 20px ;
+  height: 100vh;
+  background-color: rgb(226, 118, 118);
+  display: flex;
+  flex-direction: column;
+  align-items:flex-start;
+  gap: 20px;
+  transition: all 400ms ease-in;
+}
+.header_container .header___menuClose{
+  cursor: pointer;
+}
+
+.header_container .header___menuClose img{
+  width: 20px;
+  height: 20px;
+}
+
+.header_container .header__menu{
+  margin: 50px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.header_container nav ul li{
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 400ms ease-in;
+}
+.header_container nav ul li:hover{
+  color: rgb(142, 18, 18);
+}
+
+.main_container {
+  margin: 0 auto;
+  width: 90%;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-template-rows: 1;
+  overflow-x: hidden;
+}
+
+.main_container .main_left {
+  padding-right: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.main_container .main_left input {
+  width: 100%;
+  padding: 7px;
+}
+
+.main_container .main_right {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 17px;
+}
+
+.main_container .main_right .unit__container p {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header_container nav ol {
+  display: none;
+}
+.main_container .main_right .unit__container img {
+  width: 100%;
+  object-fit: contain;
+}
+@media only screen and (min-width:768px){
+  .header_container nav ul ,
+  .header_container nav .header__menuClick{
+    display: none;
+  }
+
+  .header_container nav ol{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .header_container nav ol li:hover{
+    color: red;
+  }
+}
