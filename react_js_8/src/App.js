@@ -2,25 +2,43 @@
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./components/Home";
+import About from "./components/About";
+import Contact from "./components/Contact";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    Element: <Home />,
+    element: <Home />,
+  },
+  {
+    path: "about",
+    element: <About />,
+  },
+  {
+    path: "contact",
+    element: <Contact />,
+  },
+  {
+    path: "contact/detail",
+    element: <ContactDetails />,
+  },
+  {
+    path: "contact/:id",
+    element: <User />,
   },
 ]);
 
 const App = () => {
   return (
     <div>
-      <RouterProvider router={router}/>
+      <RouterProvider router={router} />
     </div>
   );
 };
 
 export default App;
 
-//end 08:48:00
+//stop at 09:25:46
 {
   /* <Route path="/" element={<Home />} />
         <Route path="/About" element={<About />} />
