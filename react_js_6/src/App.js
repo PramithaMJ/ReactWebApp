@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 
 const App = () => {
   const [apiId, setApiId] = useState("1");
+  const [search, setSearch] = useState(0);
   const [data, setData] = useState({});
 
   console.log(apiId);
@@ -27,11 +28,14 @@ const App = () => {
       console.log("useEffect if condition");
       apiCall();
     }
+
+    //cleanup process
     return () => {
       console.log("cleanup");
       apiCall();
     };
-  }, [apiId]);
+    // eslint-disable-next-line
+  }, [search]);
 
   return (
     <div>
@@ -43,6 +47,9 @@ const App = () => {
         }}
         placeholder="Enter Id "
       />
+      <button onClick={() => setSearch((pre) => (pre === 0 ? 1 : 0))}>
+        Search
+      </button>
       {data && (
         <div>
           <h2>{data.title}</h2>
